@@ -15,7 +15,7 @@ function draw() {
     pop();
 
 
-    // ** BODY **********************************
+    // ** Dress **
 
         push();
         stroke('black');
@@ -45,4 +45,44 @@ function draw() {
         ellipse(225, 630, 10, 10);
         pop();
 
+        // ** Face **
+
+        push();
+
+        noStroke();
+        fill('tan');
+        ellipse(300, 300, 115, 115);
+
+        pop();
+
+        // ** Hair **
+
+        push();
+
+        pop();
+
+        // ** Hat **
+
+        push();
+        noStroke();
+        fill('black');
+        ellipse(300, 255, 200, 30);
+        triangle(300, 125, 240, 250, 350, 250);
+
+        pop();
+
+        // ** Arms **
+
+        push();
+
+        pop();
+
+        // ** Feet **
+        push();
+
+        noStroke();
+        fill('gray');
+        ellipse(275, 650, 25, 10);
+        ellipse(325, 650, 25, 10);
+        pop();
 }

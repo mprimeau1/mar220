@@ -1,5 +1,1 @@
-# Empty p5 sketch.
-
-Please replace contents of this file with appropriate readme information after finishing your p5 sketch.
-
-Current p5 version -> 0.7.1
+# This is my week one assignment for Creative Coding 2

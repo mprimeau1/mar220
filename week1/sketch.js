@@ -10,8 +10,24 @@ function draw() {
     push();
     stroke('black');
     strokeWeight(4);
-    fill(50, 55, 100);
+    fill(0,9,71);
     rect(2, 2, 596, 696);
+    pop();
+
+    // ** Arms **
+
+    push();
+    strokeWeight(15);
+    stroke(211,172,124);
+    line(280, 400, 225, 500);
+    line(325, 400, 375, 500);
+    pop();
+
+    push();
+    noStroke();
+    fill(211,172,124);
+    ellipse(225, 500, 30, 30);
+    ellipse(375, 500, 30, 30);
     pop();
 
 
@@ -26,7 +42,7 @@ function draw() {
 
         push();
         noStroke();
-        fill('white');
+        fill(160,126,204);
         ellipse(300, 350, 10, 10);
         ellipse(305, 375, 10, 10);
         ellipse(310, 400, 10, 10);
@@ -48,18 +64,27 @@ function draw() {
         // ** Face **
 
         push();
-
         noStroke();
-        fill('tan');
+        fill(211,172,124);
         ellipse(300, 300, 115, 115);
-
         pop();
 
         // ** Hair **
 
         push();
-
+        noStroke();
+        fill(84,19,131);
+        rect(255,255,90,30);
         pop();
+
+        push();
+        strokeWeight(30);
+        stroke(84,19,131);
+        line(240, 260, 240, 400);
+        line(355, 260, 355, 400);
+        pop();
+
+
 
         // ** Hat **
 
@@ -71,11 +96,7 @@ function draw() {
 
         pop();
 
-        // ** Arms **
 
-        push();
-
-        pop();
 
         // ** Feet **
         push();

@@ -69,6 +69,30 @@ function draw() {
         ellipse(300, 300, 115, 115);
         pop();
 
+        // ** Eyes **
+        push();
+        stroke('black');
+        strokeWeight(1);
+        fill('white');
+        ellipse(280, 300, 20, 20);
+        ellipse(320, 300, 20, 20);
+        pop();
+
+        push();
+        stroke(80,21,21);
+        strokeWeight(2);
+        fill('black');
+        ellipse(280, 300, 10, 10);
+        ellipse(320, 300, 10, 10);
+        pop();
+
+        // ** Mouth **
+        push();
+        noStroke();
+        fill('red');
+        triangle(310, 340, 300, 350, 290, 340);
+        pop();
+
         // ** Hair **
 
         push();
@@ -105,5 +129,19 @@ function draw() {
         fill('gray');
         ellipse(275, 650, 25, 10);
         ellipse(325, 650, 25, 10);
+        pop();
+
+        //** Text **
+
+        push();
+        textSize(16);
+        fill('yellow');
+        text('Mary Primeau', 490, 680);
+        pop();
+
+        push();
+        textSize(16);
+        fill('yellow');
+        text('A Witchy Self Portrait', 10, 25);
         pop();
 }

@@ -1,7 +1,10 @@
+// ** variables
 
+var redColor1;
 
 function setup() {
     createCanvas(600, 700);
+    redColor1 = random(255);
 }
 
 function draw() {
@@ -14,6 +17,27 @@ function draw() {
     strokeWeight(10);
     fill(0,9,71);
     rect(0, 0, 600, 700);
+
+
+    //** Text **
+
+    textSize(16);
+    fill('yellow');
+    text('Mary Primeau', 490, 680);
+
+
+    textSize(16);
+    fill('yellow');
+    text('A Witchy Self Portrait', 10, 25);
+
+    //if(counter > 1000);
+
+    {
+    redColor1 = random(255);
+    counter = 0;
+    }
+
+    counter++;
 
     // ** Arms **
 
@@ -36,7 +60,7 @@ function draw() {
         triangle(300, 300, 210, 650, 400, 650);
 
         noStroke();
-        fill(160,126,204);
+        fill(redColor1);
         ellipse(300, 350, 10, 10);
         ellipse(305, 375, 10, 10);
         ellipse(310, 400, 10, 10);
@@ -109,15 +133,5 @@ function draw() {
         ellipse(275, 650, 25, 10);
         ellipse(325, 650, 25, 10);
 
-        //** Text **
-
-        textSize(16);
-        fill('yellow');
-        text('Mary Primeau', 490, 680);
-
-
-        textSize(16);
-        fill('yellow');
-        text('A Witchy Self Portrait', 10, 25);
 
 }

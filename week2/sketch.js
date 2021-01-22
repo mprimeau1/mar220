@@ -1,10 +1,26 @@
 // ** variables
-
-var redColor1;
+var counter = 0;
+var dotsColor1, dotsColor2, dotsColor3;
+var hairColor1, hairColor2, hairColor3;
+var eyeColor1, eyeColor2, eyeColor3;
+var shoeColor1, shoeColor2, shoeColor3;
+var shape1Size = 5;
+var shape2Size = 5;
 
 function setup() {
     createCanvas(600, 700);
-    redColor1 = random(255);
+    dotsColor1 = random(255);
+    dotsColor2 = random(255);
+    dotsColor3 = random(255);
+    hairColor1 = random(255);
+    hairColor2 = random(255);
+    hairColor3 = random(255);
+    eyeColor1 = random(255);
+    eyeColor2 = random(255);
+    eyeColor3 = random(255);
+    shoeColor1 = random(255);
+    shoeColor2 = random(255);
+    shoeColor3 = random(255);
 }
 
 function draw() {
@@ -30,17 +46,30 @@ function draw() {
     fill('yellow');
     text('A Witchy Self Portrait', 10, 25);
 
-    //if(counter > 1000);
+// change the shapes and color when we hit 1000
 
-    {
-    redColor1 = random(255);
+if(counter > 1000)
+{
+    dotsColor1 = random(255);
+    dotsColor2 = random(255);
+    dotsColor3 = random(255);
+    hairColor1 = random(255);
+    hairColor2 = random(255);
+    hairColor3 = random(255);
+    eyeColor1 = random(255);
+    eyeColor2 = random(255);
+    eyeColor3 = random(255);
+    shoeColor1 = random(255);
+    shoeColor2 = random(255);
+    shoeColor3 = random(255);
+    shape1Size = random(30);
+    shape2Size = random(30);
     counter = 0;
-    }
-
-    counter++;
+}
 
     // ** Arms **
 
+    push();
     strokeWeight(15);
     stroke(211,172,124);
     line(280, 400, 225, 500);
@@ -50,88 +79,97 @@ function draw() {
     fill(211,172,124);
     ellipse(225, 500, 30, 30);
     ellipse(375, 500, 30, 30);
+    pop();
+
+  counter++;
 
     // ** Dress **
 
+    push();
+    stroke('black');
+    strokeWeight(1);
+    fill('black');
+    triangle(300, 300, 210, 650, 400, 650);
+    pop();
 
-        stroke('black');
-        strokeWeight(1);
-        fill('black');
-        triangle(300, 300, 210, 650, 400, 650);
+    //** Dots **
 
-        noStroke();
-        fill(redColor1);
-        ellipse(300, 350, 10, 10);
-        ellipse(305, 375, 10, 10);
-        ellipse(310, 400, 10, 10);
-        ellipse(315, 450, 10, 10);
-        ellipse(320, 500, 10, 10);
-        ellipse(330, 550, 10, 10);
-        ellipse(350, 600, 10, 10);
-        ellipse(375, 640, 10, 10);
-        ellipse(300, 425, 10, 10);
-        ellipse(285, 590, 10, 10);
-        ellipse(275, 570, 10, 10);
-        ellipse(275, 450, 10, 10);
-        ellipse(265, 500, 10, 10);
-        ellipse(250, 550, 10, 10);
-        ellipse(230, 600, 10, 10);
-        ellipse(225, 630, 10, 10);
+    push();
+    noStroke();
+    fill(dotsColor1,dotsColor2,dotsColor3);
+    ellipse(300, 350, shape1Size, shape2Size);
+    ellipse(305, 375, shape1Size, shape2Size);
+    ellipse(310, 400, shape1Size, shape2Size);
+    ellipse(315, 450, shape1Size, shape2Size);
+    ellipse(320, 500, shape1Size, shape2Size);
+    ellipse(330, 550, shape1Size, shape2Size);
+    ellipse(350, 600, shape1Size, shape2Size);
+    ellipse(375, 640, shape1Size, shape2Size);
+    ellipse(300, 425, shape1Size, shape2Size);
+    ellipse(290, 590, shape1Size, shape2Size);
+    ellipse(285, 570, shape1Size, shape2Size);
+    ellipse(305, 450, shape1Size, shape2Size);
+    ellipse(265, 500, shape1Size, shape2Size);
+    ellipse(250, 550, shape1Size, shape2Size);
+    ellipse(290, 600, shape1Size, shape2Size);
+    ellipse(300, 630, shape1Size, shape2Size);
+    pop();
 
-        // ** Face **
+    // ** Face **
+    push();
+    noStroke();
+    fill(211,172,124);
+    ellipse(300, 300, 115, 115);
+    pop();
 
-        noStroke();
-        fill(211,172,124);
-        ellipse(300, 300, 115, 115);
+    // ** Eyes **
+    push();
+    stroke('black');
+    strokeWeight(1);
+    fill('white');
+    ellipse(280, 300, 20, 20);
+    ellipse(320, 300, 20, 20);
 
+    stroke(eyeColor1,eyeColor2,eyeColor3);
+    strokeWeight(2);
+    fill('black');
+    ellipse(280, 300, 10, 10);
+    ellipse(320, 300, 10, 10);
+    pop();
 
-        // ** Eyes **
+    // ** Mouth **
+    push();
+    noStroke();
+    fill('red');
+    triangle(310, 340, 300, 350, 290, 340);
+    pop();
 
-        stroke('black');
-        strokeWeight(1);
-        fill('white');
-        ellipse(280, 300, 20, 20);
-        ellipse(320, 300, 20, 20);
+    // ** Hair **
+    push();
+    noStroke();
+    fill(hairColor1,hairColor2,hairColor3);
+    rect(255,255,90,30);
 
+    strokeWeight(30);
+    stroke(hairColor1,hairColor2,hairColor3);
+    line(240, 260, 240, 400);
+    line(355, 260, 355, 400);
+    pop();
 
-        stroke(80,21,21);
-        strokeWeight(2);
-        fill('black');
-        ellipse(280, 300, 10, 10);
-        ellipse(320, 300, 10, 10);
+    // ** Hat **
+    push();
+    noStroke();
+    fill('black');
+    ellipse(300, 255, 200, 30);
+    triangle(300, 125, 240, 250, 350, 250);
+    pop();
 
-
-        // ** Mouth **
-
-        noStroke();
-        fill('red');
-        triangle(310, 340, 300, 350, 290, 340);
-
-        // ** Hair **
-
-
-        noStroke();
-        fill(84,19,131);
-        rect(255,255,90,30);
-
-        strokeWeight(30);
-        stroke(84,19,131);
-        line(240, 260, 240, 400);
-        line(355, 260, 355, 400);
-
-        // ** Hat **
-
-        noStroke();
-        fill('black');
-        ellipse(300, 255, 200, 30);
-        triangle(300, 125, 240, 250, 350, 250);
-
-        // ** Feet **
-
-        noStroke();
-        fill('gray');
-        ellipse(275, 650, 25, 10);
-        ellipse(325, 650, 25, 10);
-
+    // ** Shoes **
+    push();
+    noStroke();
+    fill(shoeColor1,shoeColor2,shoeColor3);
+    ellipse(275, 650, 25, 10);
+    ellipse(325, 650, 25, 10);
+    pop();
 
 }

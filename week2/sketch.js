@@ -6,6 +6,10 @@ var eyeColor1, eyeColor2, eyeColor3;
 var shoeColor1, shoeColor2, shoeColor3;
 var shape1Size = 5;
 var shape2Size = 5;
+var eye1size = 1;
+var hair1y= 300;
+
+
 
 function setup() {
     createCanvas(600, 700);
@@ -64,6 +68,8 @@ if(counter > 1000)
     shoeColor3 = random(255);
     shape1Size = random(30);
     shape2Size = random(30);
+    eye1size = random(10);
+    hair1y+= random(300);
     counter = 0;
 }
 
@@ -131,7 +137,7 @@ if(counter > 1000)
     ellipse(320, 300, 20, 20);
 
     stroke(eyeColor1,eyeColor2,eyeColor3);
-    strokeWeight(2);
+    strokeWeight(eye1size);
     fill('black');
     ellipse(280, 300, 10, 10);
     ellipse(320, 300, 10, 10);
@@ -152,8 +158,8 @@ if(counter > 1000)
 
     strokeWeight(30);
     stroke(hairColor1,hairColor2,hairColor3);
-    line(240, 260, 240, 400);
-    line(355, 260, 355, 400);
+    line(240, 260, 240, hair1y);
+    line(355, 260, 355, hair1y);
     pop();
 
     // ** Hat **

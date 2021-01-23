@@ -8,8 +8,24 @@ var shape1Size = 5;
 var shape2Size = 5;
 var eye1size = 1;
 var hair1y= 300;
-
-
+var shoe1size= 25;
+var shoe2size= 10;
+var dots1X = 300, dots1Y = 350;
+var dots2X = 305, dots2Y = 375;
+var dots3X = 310, dots3Y = 400;
+var dots4X = 315, dots4Y = 450;
+var dots5X = 320, dots5Y = 500;
+var dots6X = 330, dots6Y = 550;
+var dots7X = 350, dots7Y = 600;
+var dots8X = 375, dots8Y = 645;
+var dots9X = 300, dots9Y = 425;
+var dots10X = 290, dots10Y = 590;
+var dots11X = 285, dots11Y = 570;
+var dots12X = 305, dots12Y = 450;
+var dots13X = 265, dots13Y = 500;
+var dots14X = 250, dots14Y = 550;
+var dots15X = 290, dots15Y = 600;
+var dots16X = 300, dots16Y = 630;
 
 function setup() {
     createCanvas(600, 700);
@@ -69,7 +85,41 @@ if(counter > 1000)
     shape1Size = random(30);
     shape2Size = random(30);
     eye1size = random(10);
-    hair1y+= random(300);
+    hair1y = random(300,600);
+    shoe1size = random(50);
+    shoe2size= random(50);
+    dots1X = random(290,310);
+    dots1Y = random(340,360);
+    dots2X = random(295,315);
+    dots2Y = random(365,385);
+    dots3X = random(305,315);
+    dots3Y = random(390,410);
+    dots4X = random(310,325);
+    dots4Y = random(440,460);
+    dots5X = random(310,330);
+    dots5Y = random(490,510);
+    dots6X = random(320,350);
+    dots6Y = random(540,560);
+    dots7X = random(340,360);
+    dots7Y = random(590,610);
+    dots8X = random(350,375);
+    dots8Y = random(390,410);
+    dots9X = random(290,310);
+    dots9Y = random(415,435);
+    dots10X = random(280,300);
+    dots10Y = random(580,600);
+    dots11X = random(295,305);
+    dots11Y = random(560,580);
+    dots12X = random(295,315);
+    dots12Y = random(540,560);
+    dots13X = random(255,275);
+    dots13Y = random(490,510);
+    dots14X = random(240,260);
+    dots14Y = random(540,560);
+    dots15X = random(280,300);
+    dots15Y = random(590,610);
+    dots16X = random(290,310);
+    dots16Y = random(620,640);
     counter = 0;
 }
 
@@ -103,22 +153,22 @@ if(counter > 1000)
     push();
     noStroke();
     fill(dotsColor1,dotsColor2,dotsColor3);
-    ellipse(300, 350, shape1Size, shape2Size);
-    ellipse(305, 375, shape1Size, shape2Size);
-    ellipse(310, 400, shape1Size, shape2Size);
-    ellipse(315, 450, shape1Size, shape2Size);
-    ellipse(320, 500, shape1Size, shape2Size);
-    ellipse(330, 550, shape1Size, shape2Size);
-    ellipse(350, 600, shape1Size, shape2Size);
-    ellipse(375, 640, shape1Size, shape2Size);
-    ellipse(300, 425, shape1Size, shape2Size);
-    ellipse(290, 590, shape1Size, shape2Size);
-    ellipse(285, 570, shape1Size, shape2Size);
-    ellipse(305, 450, shape1Size, shape2Size);
-    ellipse(265, 500, shape1Size, shape2Size);
-    ellipse(250, 550, shape1Size, shape2Size);
-    ellipse(290, 600, shape1Size, shape2Size);
-    ellipse(300, 630, shape1Size, shape2Size);
+    ellipse(dots1X, dots1Y, shape1Size, shape2Size);
+    ellipse(dots2X, dots2Y, shape1Size, shape2Size);
+    ellipse(dots3X, dots3Y, shape1Size, shape2Size);
+    ellipse(dots4X, dots4Y, shape1Size, shape2Size);
+    ellipse(dots5X, dots5Y, shape1Size, shape2Size);
+    ellipse(dots6X, dots6Y, shape1Size, shape2Size);
+    ellipse(dots7X, dots7Y, shape1Size, shape2Size);
+    ellipse(dots8X, dots8Y, shape1Size, shape2Size);
+    ellipse(dots9X, dots9Y, shape1Size, shape2Size);
+    ellipse(dots10X, dots10Y, shape1Size, shape2Size);
+    ellipse(dots11X, dots11Y, shape1Size, shape2Size);
+    ellipse(dots12X, dots12Y, shape1Size, shape2Size);
+    ellipse(dots13X, dots13Y, shape1Size, shape2Size);
+    ellipse(dots14X, dots14Y, shape1Size, shape2Size);
+    ellipse(dots15X, dots15Y, shape1Size, shape2Size);
+    ellipse(dots16X, dots16Y, shape1Size, shape2Size);
     pop();
 
     // ** Face **
@@ -174,8 +224,8 @@ if(counter > 1000)
     push();
     noStroke();
     fill(shoeColor1,shoeColor2,shoeColor3);
-    ellipse(275, 650, 25, 10);
-    ellipse(325, 650, 25, 10);
+    ellipse(275, 650, shoe1size, shoe2size);
+    ellipse(325, 650, shoe1size, shoe2size);
     pop();
 
 }

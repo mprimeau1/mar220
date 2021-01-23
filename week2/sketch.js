@@ -1,12 +1,13 @@
 // ** variables
 var counter = 0;
 var dotsColor1, dotsColor2, dotsColor3;
-var hairColor1, hairColor2, hairColor3;
+var hairColor1,hairColor2,hairColor3;
 var eyeColor1, eyeColor2, eyeColor3;
 var shoeColor1, shoeColor2, shoeColor3;
 var shape1Size = 5;
 var shape2Size = 5;
 var eye1size = 1;
+var eyePupal = 1;
 var hair1y= 300;
 var shoe1size= 25;
 var shoe2size= 10;
@@ -103,7 +104,7 @@ if(counter > 1000)
     dots7X = random(340,360);
     dots7Y = random(590,610);
     dots8X = random(350,375);
-    dots8Y = random(390,410);
+    dots8Y = random(635,650);
     dots9X = random(290,310);
     dots9Y = random(415,435);
     dots10X = random(280,300);

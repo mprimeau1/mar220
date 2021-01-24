@@ -6,11 +6,19 @@ var eyeColor1, eyeColor2, eyeColor3;
 var shoeColor1, shoeColor2, shoeColor3;
 var shape1Size = 5;
 var shape2Size = 5;
-var eye1size = 1;
-var eyePupal = 1;
+var eyeStroke = 1;
+var eye1XPupal = 280;
+var eyeYPupal = 300;
+var eye2XPupal = 320;
+var eye1Size = 20;
+var eye2Size = 10;
 var hair1y= 300;
+var hairStroke = 20;
 var shoe1size= 25;
 var shoe2size= 10;
+var shoe1X= 275;
+var shoe2X= 325;
+var shoeY= 650;
 var dots1X = 300, dots1Y = 350;
 var dots2X = 305, dots2Y = 375;
 var dots3X = 310, dots3Y = 400;
@@ -85,10 +93,19 @@ if(counter > 1000)
     shoeColor3 = random(255);
     shape1Size = random(30);
     shape2Size = random(30);
-    eye1size = random(10);
+    eyeStroke = random(10);
+    eye1XPupal = random(270,290);
+    eyeYPupal = random(290,310);
+    eye2XPupal = random(310,330);
+    eye1Size = random(20,40);
+    eye2Size = random(5,20);
     hair1y = random(300,600);
+    hairStroke = random(5,30);
     shoe1size = random(50);
     shoe2size= random(50);
+    shoe1X = random(260,300);
+    shoe2X = random(300,340);
+    shoeY = random (630,655);
     dots1X = random(290,310);
     dots1Y = random(340,360);
     dots2X = random(295,315);
@@ -184,14 +201,14 @@ if(counter > 1000)
     stroke('black');
     strokeWeight(1);
     fill('white');
-    ellipse(280, 300, 20, 20);
-    ellipse(320, 300, 20, 20);
+    ellipse(eye1XPupal, eyeYPupal, eye1Size, eye1Size);
+    ellipse(eye2XPupal, eyeYPupal, eye1Size, eye1Size);
 
     stroke(eyeColor1,eyeColor2,eyeColor3);
-    strokeWeight(eye1size);
+    strokeWeight(eyeStroke);
     fill('black');
-    ellipse(280, 300, 10, 10);
-    ellipse(320, 300, 10, 10);
+    ellipse(eye1XPupal, eyeYPupal, eye2Size, eye2Size);
+    ellipse(eye2XPupal, eyeYPupal, eye2Size, eye2Size);
     pop();
 
     // ** Mouth **
@@ -205,9 +222,9 @@ if(counter > 1000)
     push();
     noStroke();
     fill(hairColor1,hairColor2,hairColor3);
-    rect(255,255,90,30);
+    rect(240,255,115,30);
 
-    strokeWeight(30);
+    strokeWeight(hairStroke);
     stroke(hairColor1,hairColor2,hairColor3);
     line(240, 260, 240, hair1y);
     line(355, 260, 355, hair1y);
@@ -225,8 +242,8 @@ if(counter > 1000)
     push();
     noStroke();
     fill(shoeColor1,shoeColor2,shoeColor3);
-    ellipse(275, 650, shoe1size, shoe2size);
-    ellipse(325, 650, shoe1size, shoe2size);
+    ellipse(shoe1X, shoeY, shoe1size, shoe2size);
+    ellipse(shoe2X, shoeY, shoe1size, shoe2size);
     pop();
 
 }

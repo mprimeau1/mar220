@@ -1,4 +1,7 @@
 // ** variables
+var imgOwl;
+var imgBat;
+var imgCat;
 var counter = 0;
 var dotsColor1, dotsColor2, dotsColor3;
 var hairColor1,hairColor2,hairColor3;
@@ -36,6 +39,12 @@ var dots14X = 250, dots14Y = 550;
 var dots15X = 290, dots15Y = 600;
 var dots16X = 300, dots16Y = 630;
 
+function preload() {
+  imgBat = loadimage('assests/bat.png');
+  imgOwl = loadimage('assests/owl.png');
+  imgCat = loadimage('assests/cat.png');
+}
+
 function setup() {
     createCanvas(600, 700);
     dotsColor1 = random(255);
@@ -50,6 +59,10 @@ function setup() {
     shoeColor1 = random(255);
     shoeColor2 = random(255);
     shoeColor3 = random(255);
+    image(imgBat, 0,0);
+    image(imgCat, 30,30);
+    image(imgOwl, 50,50);
+
 }
 
 function draw() {

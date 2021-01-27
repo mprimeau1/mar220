@@ -1,7 +1,5 @@
 // ** variables
-var imgOwl;
-var imgBat;
-var imgCat;
+var owl;
 var counter = 0;
 var dotsColor1, dotsColor2, dotsColor3;
 var hairColor1,hairColor2,hairColor3;
@@ -40,9 +38,9 @@ var dots15X = 290, dots15Y = 600;
 var dots16X = 300, dots16Y = 630;
 
 function preload() {
-  imgBat = loadimage('assests/bat.png');
-  imgOwl = loadimage('assests/owl.png');
-  imgCat = loadimage('assests/cat.png');
+  owl = loadImage("assets/owl.png");
+  //imgOwl = loadImage('assests/owl.png');
+  //imgCat = loadImage('assests/cat.png');
 }
 
 function setup() {
@@ -59,9 +57,9 @@ function setup() {
     shoeColor1 = random(255);
     shoeColor2 = random(255);
     shoeColor3 = random(255);
-    image(imgBat, 0,0);
-    image(imgCat, 30,30);
-    image(imgOwl, 50,50);
+  //  loadimage(imgBat, 0,0);
+  //  image(imgCat, 30,30);
+  //  image(Owl, 50,50);
 
 }
 
@@ -87,6 +85,8 @@ function draw() {
     textSize(16);
     fill('yellow');
     text('A Witchy Self Portrait', 10, 25);
+
+    image(owl,0,0);
 
 // change the shapes and color when we hit 1000
 

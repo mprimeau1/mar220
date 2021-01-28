@@ -1,5 +1,18 @@
 // ** variables
 var owl;
+var cat;
+var bat;
+var batX = 300;
+var owlY = 0;
+var catX = 0;
+var owlSpeed = 5;
+var catSpeed = 5;
+var batSpeed = 5;
+
+var newFont;
+var changeSpeed;
+var timerText = 0;
+
 var counter = 0;
 var dotsColor1, dotsColor2, dotsColor3;
 var hairColor1,hairColor2,hairColor3;
@@ -37,10 +50,13 @@ var dots14X = 250, dots14Y = 550;
 var dots15X = 290, dots15Y = 600;
 var dots16X = 300, dots16Y = 630;
 
+
+// preload images and font
 function preload() {
   owl = loadImage("assets/owl.png");
-  //imgOwl = loadImage('assests/owl.png');
-  //imgCat = loadImage('assests/cat.png');
+  bat = loadImage('assets/bat.png');
+  cat = loadImage('assets/cat.png');
+  newFont = loadFont('assets/BubbleRainbow.ttf');
 }
 
 function setup() {
@@ -57,10 +73,8 @@ function setup() {
     shoeColor1 = random(255);
     shoeColor2 = random(255);
     shoeColor3 = random(255);
-  //  loadimage(imgBat, 0,0);
-  //  image(imgCat, 30,30);
-  //  image(Owl, 50,50);
 
+    setInterval(changeSpeed, 1000);
 }
 
 function draw() {
@@ -76,7 +90,7 @@ function draw() {
 
 
     //** Text **
-
+    textFont(newFont);
     textSize(16);
     fill('yellow');
     text('Mary Primeau', 490, 680);
@@ -85,13 +99,39 @@ function draw() {
     textSize(16);
     fill('yellow');
     text('A Witchy Self Portrait', 10, 25);
+    text("Time Passed: " + timerText, 10, 50);
 
-    image(owl,0,0);
+// added images after preload
+    image(owl,0,owlY);
+    image(cat,catX,325);
+    image(bat,batX,50);
+
+// change the bat along the X axis
+  batX += batSpeed;
+  if(batX >= width - bat.width || batX  <= bat.width/8)
+  {
+    batSpeed *= -1;
+  }
+
+  // change the cat along the X axis
+    catX += catSpeed;
+    if(catX >= width - cat.width || catX  <= cat.width/8)
+    {
+      catSpeed *= -1;
+    }
+
+// change the owl along the Y axis
+
+  owlY += owlSpeed;
+  if(owlY >= height - owl.height || owlY  <= owl.height/8)
+  {
+    owlSpeed *= -1;
+  }
 
 // change the shapes and color when we hit 1000
 
-if(counter > 1000)
-{
+  if(counter > 1000)
+  {
     dotsColor1 = random(255);
     dotsColor2 = random(255);
     dotsColor3 = random(255);
@@ -154,6 +194,8 @@ if(counter > 1000)
     counter = 0;
 }
 
+  counter++;
+
     // ** Arms **
 
     push();
@@ -167,8 +209,6 @@ if(counter > 1000)
     ellipse(225, 500, 30, 30);
     ellipse(375, 500, 30, 30);
     pop();
-
-  counter++;
 
     // ** Dress **
 
@@ -258,5 +298,14 @@ if(counter > 1000)
     ellipse(shoe1X, shoeY, shoe1size, shoe2size);
     ellipse(shoe2X, shoeY, shoe1size, shoe2size);
     pop();
+}
+// call back function that updates the time shown and changes the speeds of objects
+    function changeSpeed() {
+          timerText++;
+          if (timerText % 5 == 0) {
+            batSpeed = random(1,10);
+            catSpeed = random(1,10);
+            owlSpeed = random(1,10);
 
+        }
 }

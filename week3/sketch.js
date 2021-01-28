@@ -2,15 +2,14 @@
 var owl;
 var cat;
 var bat;
-var batX = 300;
-var owlY = 0;
-var catX = 0;
-var owlSpeed = 5;
-var catSpeed = 5;
-var batSpeed = 5;
+var batX = 200;
+var owlY = 200;
+var catX = 50;
+var owlSpeed = 1;
+var catSpeed = 2;
+var batSpeed = 3;
 
 var newFont;
-var changeSpeed;
 var timerText = 0;
 
 var counter = 0;
@@ -91,19 +90,19 @@ function draw() {
 
     //** Text **
     textFont(newFont);
-    textSize(16);
+    textSize(20);
     fill('yellow');
-    text('Mary Primeau', 490, 680);
+    text('Mary Primeau', 475, 680);
 
 
-    textSize(16);
+    textSize(20);
     fill('yellow');
     text('A Witchy Self Portrait', 10, 25);
     text("Time Passed: " + timerText, 10, 50);
 
 // added images after preload
-    image(owl,0,owlY);
-    image(cat,catX,325);
+    image(owl,1,owlY);
+    image(cat,catX,400);
     image(bat,batX,50);
 
 // change the bat along the X axis
@@ -114,11 +113,11 @@ function draw() {
   }
 
   // change the cat along the X axis
-    catX += catSpeed;
-    if(catX >= width - cat.width || catX  <= cat.width/8)
-    {
-      catSpeed *= -1;
-    }
+  catX += catSpeed;
+  if(catX >= width - cat.width || catX  <= cat.width/8)
+  {
+    catSpeed *= -1;
+  }
 
 // change the owl along the Y axis
 
@@ -302,10 +301,10 @@ function draw() {
 // call back function that updates the time shown and changes the speeds of objects
     function changeSpeed() {
           timerText++;
-          if (timerText % 5 == 0) {
-            batSpeed = random(1,10);
+          if (timerText %5 == 0) {
+            batSpeed = random(5,10);
             catSpeed = random(1,10);
-            owlSpeed = random(1,10);
+            owlSpeed = random(1,5);
 
         }
 }

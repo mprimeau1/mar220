@@ -1,12 +1,14 @@
 var cat;
 var animation = [];
 var runanimation = [];
+var slideanimation = [];
 var catObjects = [];
 var catRunObjects = [];
 var catSlideObjects = [];
 var i = 0;
 var j = 0;
 var x = 0;
+var g = 0;
 var counter = 0;
 
 function preload(){
@@ -79,6 +81,11 @@ function preload(){
     runanimation[i] = catRunObjects[i].getImage();
   }
 
+  for(var i = 0; i < catSlideObjects.length; i++)
+  {
+    slideanimation[i] = catObjects[i].getImage();
+  }
+
 }
 
 function setup() {
@@ -115,6 +122,31 @@ function draw() {
     }
 
 
+// draw each frame based on the index in the array
+    if(keyIsPressed)
+    {
+    if(key == "x")
+        {
+// continue to display the image
+    image(slideanimation[g], catSlideObjects[g].getX(), catSlideObjects[g].getY());
+// this section slows the slides down
+    counter++;
+    if(counter > 5)
+            {
+// increment the index "g"
+    incrementSlideIndex();
+// restart our counter
+    counter = 0;
+            }
+        }
+    }
+    else
+    {
+        image(animation[i], catObjects[i].getX(), catObjects[i].getY());
+    }
+
+
+
 }
 
 function incrementIndex()
@@ -137,5 +169,17 @@ function incrementRunIndex()
      // if we reach the end of the array, start over
      if (j >= runanimation.length) {
          j = 0;
+     }
+}
+
+function incrementSlideIndex()
+{
+
+     // increment the index
+     g += 1;
+
+     // if we reach the end of the array, start over
+     if (g >= runanimation.length) {
+         g = 0;
      }
 }

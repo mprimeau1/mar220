@@ -94,6 +94,25 @@ function draw() {
 
         catRunObjects = currentObjects;
 
+      }      else if (key == "a")
+      {
+
+        currentAnimation = leftrunanimation;
+        currentObjects = catRunLeftObjects;
+
+        if (counter >= currentAnimation.length)
+        {
+          counter = 0;
+        }
+        currentObjects[counter].setX(currentObjects[counter].getX() - 2);
+
+        for (var i = 0; i < cowGirlRunObjects.length; i++)
+        {
+          catRunObjects[i].setX(currentObjects[0].getX());
+        }
+
+
+        catRunLeftObjects = currentObjects;
       }
 
       for (var i = 0; i < catObjects.length; i++)

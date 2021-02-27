@@ -1,11 +1,8 @@
 var catObjects;
-var result, runresult, runLeftresult, fallresult, jumpresult;
+var result, runresult, runLeftresult, fallresult, jumpresult, attackresult;
 var crystal1;
 var crystal1X;
 var crystal1Y;
-var crystal2;
-var crystal2X;
-var crystal2Y;
 
 function preload() {
   result = loadStrings('assets/characteridle.txt');
@@ -13,6 +10,7 @@ function preload() {
   runLeftresult = loadStrings ('assets/characterrunleft.txt');
   fallresult = loadStrings ('assets/characterfall.txt');
   jumpresult = loadStrings ('assets/characterjump.txt');
+  attackresult = loadStrings ('assets/characterattack.txt');
 }
 
 function setup() {
@@ -23,21 +21,14 @@ function setup() {
     catObjects.addAnimation('runLeft', runLeftresult[0], runLeftresult[runLeftresult.length-1]);
     catObjects.addAnimation('fall', fallresult[0], fallresult[fallresult.length-1]);
     catObjects.addAnimation('jump', jumpresult[0], jumpresult[jumpresult.length-1]);
+    catObjects.addAnimation('attack', attackresult[0], attackresult[attackresult.length-1]);
     
     
-    crystal1 = createSprite(random(0,300), 300);
-    //compact way to add an image
+    crystal1 = createSprite(600, 300);
     crystal1.addImage(loadImage('assets/rock1.png'));
-    
-    crystal2 = createSprite(random(300,600), 300);
-    crystal2.addImage(loadImage('assets/rock2.png'));
-    
-    exit = createSprite(900, 450);
-    exit.addImage(loadImage('assets/exit.png'));
     
 }
 
-// display all the frames using the draw function as a loop
 function draw()
 {
     background(120);
@@ -56,40 +47,21 @@ function draw()
     {
       catObjects.changeAnimation('runLeft');
       catObjects.velocity.x -= .5;
-      if(catObjects.collide(crystal2))
-      
+      if(catObjects.collide(crystal1))      
       {
         catObjects.changeAnimation('idle');
       }
       
-      if(catObjects.collide(exit))
-      
-      {
-        catObjects.changeAnimation('idle');
-      }
     }
     
     else if (keyDown('s'))
     {
       catObjects.changeAnimation('fall');
       catObjects.velocity.y += .5;
-      if(catObjects.collide(crystal1))
-          
+      if(catObjects.collide(crystal1))    
       {
         catObjects.changeAnimation('idle');
-      }
-      
-      if(catObjects.collide(crystal2))
-      
-      {
-        catObjects.changeAnimation('idle');
-      }
-      
-      if(catObjects.collide(exit))
-      
-      {
-        catObjects.changeAnimation('idle');
-      }
+      }  
     }
     
     else if (keyDown('w'))
@@ -100,14 +72,13 @@ function draw()
       {
         catObjects.changeAnimation('idle');
       }
-      
-      if(catObjects.collide(crystal2))
-      {
-        catObjects.changeAnimation('idle');
-      }
-      
-      if(catObjects.collide(exit))
-      
+    }
+    
+    else if (keyDown('x'))
+    {
+      catObjects.changeAnimation('attack');
+      catObjects.velocity.x -= .5;
+      if(catObjects.collide(crystal1))
       {
         catObjects.changeAnimation('idle');
       }
@@ -122,7 +93,5 @@ function draw()
 
     catObjects.debug = mouseIsPressed;
     crystal1.debug = mouseIsPressed;
-    crystal2.debug = mouseIsPressed;
-    exit.debug = mouseIsPressed;
     drawSprites();
 }

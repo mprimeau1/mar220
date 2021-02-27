@@ -3,8 +3,8 @@ class Particle {
     constructor(x,y) {
       this.x = x;
       this.y = y;
-      this.vx = random(-1, 1);
-      this.vy = random(-5, -1);
+      this.vx = random(-3, 3);
+      this.vy = random(-10, -1);
       this.alpha = 255;
     }
   
@@ -15,14 +15,13 @@ class Particle {
     update() {
       this.x += this.vx;
       this.y += this.vy;
-      this.alpha -= 5;
+      this.alpha -= 8;
     }
   
     show() {
       noStroke();
-      //stroke(255);
       fill(255, this.alpha);
-      ellipse(this.x, this.y, 16);
+      ellipse(this.x, this.y, 5);
     }
   
   }

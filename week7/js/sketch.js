@@ -2,6 +2,7 @@ var catObjects;
 var result, runresult, runLeftresult, attackresult;
 var crystal1;
 var crystal2;
+var youwin;
 const particles = [];
 var health = 100;
 
@@ -26,6 +27,9 @@ function setup() {
     
     crystal2 = createSprite(800, 300);
     crystal2.addImage(loadImage('assets/rock2.png'));
+    
+//    youwin = createSprite(450, 300);
+//    youwin.addImage(loadImage('assets/youwin.png'));
     
 }
 
@@ -67,6 +71,14 @@ function draw()
         catObjects.changeAnimation('idle');
       }  
     }
+    if (crystal2 != null)
+    {
+    if(catObjects.collide(crystal2))
+    {
+      catObjects.changeAnimation('idle');    
+  }
+      
+    }
   }
     
     else if (keyDown('x'))
@@ -87,12 +99,12 @@ function draw()
     }
   
   
-  else if (crystal2 != null)
+ if (crystal2 != null)
   {
     if(dist(catObjects.position.x,catObjects.position.y,crystal2.position.x,crystal2.position.y) < 250)
     {
       createParticles(crystal2.position.x, crystal2.position.y);
-      health -= 2;
+      health -= 3;
       if(health <= 0)
       {
         crystal2.remove();
@@ -100,6 +112,7 @@ function draw()
       }
     }
   }
+  
 }
   
   
@@ -111,6 +124,8 @@ function draw()
     }
 
     catObjects.debug = mouseIsPressed;
+    
+    
     drawSprites();
 }
 

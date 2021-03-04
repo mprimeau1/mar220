@@ -35,6 +35,7 @@ function draw() {
     else if (key == 's') { // move down 
 
       y -= 1;
+
       }
 
 }
@@ -43,22 +44,42 @@ function draw() {
 function createBox(w, h, d, transX, transY, move) {
   push();
   if (move) {
-    translate(transX + x, transY)
-    scale(2,1);
+    translate(transX + x, transY);
+
   } else {
     translate(transX, transY);
-    scale(0,0);
+
   }
   if (move) {
     translate(x, transY - y);
-    scale(-2,-1);
+    
   } else {
     translate(transX, transY);
-    scale(0,0);
-  }
 
+  }
+  if (keyIsPressed) {
+    
+    {if (key == 'd')
+    scale(2,2);
+ } 
+  
+  {if (key == 'a')
+  scale(.5,.5);
+  }
+  
+  {if (key == 'w')
+  scale(2,2);
+} 
+
+{if (key == 's')
+scale(.5,.5);
+}
+
+  
+}
   rotateX(frameCount * 0.01);
   rotateY(frameCount * 0.01);
+  scale(1,1);
   box(w, h, d);
   pop();
 

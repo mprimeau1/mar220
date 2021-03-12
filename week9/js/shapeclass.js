@@ -1,7 +1,6 @@
-// create a class that allows us to display various simple shapes
+
 class shapeclass {
 
-    // get all the parameters to display and rotate the shapes
     constructor(shapetype, param1, param2, param3, translateX, translateY,
         rotateXvalue, rotateYvalue, rotateZvalue, textureValue) {
         this.shapetype = shapetype;
@@ -16,7 +15,6 @@ class shapeclass {
         this.textureValue = textureValue;
     }
 
-    // display the objects
     draw(fCount) {
         push();
         translate(this.translateX, this.translateY);

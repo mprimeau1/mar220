@@ -4,7 +4,8 @@ let hand;
 let planets;
 let watercolor;
 let jelly;
-
+let lady;
+let ss;
 
 let unicorn;
 
@@ -18,6 +19,8 @@ function preload() {
   hand = loadImage('assets/hand.jpg');
   planets = loadImage('assets/planets.jpg');
   watercolor = loadImage('assets/watercolor.jpg');
+  lady = loadImage('assets/lady.jpg');
+  ss = loadImage('assets/super.jpg');
   unicorn = loadModel('assets/unicorn.obj', true);
 }
 
@@ -25,8 +28,8 @@ function preload() {
 function setup() {
   createCanvas(800, 600, WEBGL);
 
-  shapeArray.push(new shapeclass("box", 150, 150, 150, boxTranslationX, boxTranslationY, 0.02, 0.03, 0, handset));
-  shapeArray.push(new shapeclass("cylinder", 80, 90, 0, 200, 20, 0.01, 0.01, 0, handset));
+  shapeArray.push(new shapeclass("box", 150, 150, 150, boxTranslationX, boxTranslationY, 0.02, 0.03, 0, ss));
+  shapeArray.push(new shapeclass("cylinder", 80, 90, 0, 200, 20, 0.01, 0.01, 0, lady));
 }
 
 function draw() {
@@ -39,6 +42,8 @@ function draw() {
   image(hand);
   image(planets);
   image(watercolor);
+  image(lady);
+  image(ss);
 
   for (var i = 0; i < shapeArray.length; i++) {
     shapeArray[i].draw(frameCount);
